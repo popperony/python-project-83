@@ -1,6 +1,6 @@
-import validators
-from bs4 import BeautifulSoup
 from urllib.parse import urlparse
+
+import validators
 
 MAX_URL_LENGTH = 255
 
