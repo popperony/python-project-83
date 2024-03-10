@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/popperony/python-project-83/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/popperony/python-project-83/actions)
-[![Python CI](https://github.com/popperony/python-project-83/actions/workflows/python_ci.yml/badge.svg)](https://github.com/popperony/python-project-83/actions/workflows/Python_CI.yml)
+[![Python CI](https://github.com/popperony/python-project-83/actions/workflows/python_ci.yml/badge.svg)](https://github.com/popperony/python-project-83/actions/workflows/python_ci.yml)
 
 ### [Try the application](https://python-project-83-utn1.onrender.com/)
 
