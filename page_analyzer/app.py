@@ -69,11 +69,11 @@ def post_new_url():
     existing = get_data_by_name(url)
     if existing:
         flash('Страница уже существует', 'info')
-        id_ = existing.id
+        id = existing.id
     else:
         flash('Страница успешно добавлена', 'success')
-        id_ = add_url(url)
-    return redirect(url_for('get_url_id', id=id_), 302)
+        id = add_url(url)
+    return redirect(url_for('get_url_id', id=id), 302)
 
 
 @app.get('/urls/<id>')
