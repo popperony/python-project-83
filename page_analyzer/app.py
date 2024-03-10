@@ -77,9 +77,9 @@ def post_new_url():
 
 
 @app.get('/urls/<id>')
-def get_url_id(id_):
-    url = get_data_by_id(id_)
-    checks = get_checks_by_id(id_)
+def get_url_id(id):
+    url = get_data_by_id(id)
+    checks = get_checks_by_id(id)
     messages = get_flashed_messages(with_categories=True)
     return render_template(
         'url.html',
@@ -90,22 +90,22 @@ def get_url_id(id_):
 
 
 @app.post('/urls/<id>/checks')
-def post_checks(id_):
-    url = get_data_by_id(id_)
+def post_checks(id):
+    url = get_data_by_id(id)
 
     try:
         resp = requests.get(url.name)
         resp.raise_for_status()
     except requests.RequestException:
         flash('Произошла ошибка при проверке', 'danger')
-        return redirect(url_for('get_url_id', id=id_), 302)
+        return redirect(url_for('get_url_id', id=id), 302)
 
     data = parse_html(resp)
-    data['id'] = id_
+    data['id'] = id
     flash('Страница успешно проверена', 'success')
 
     add_check(data)
-    return redirect(url_for('get_url_id', id=id_), 302)
+    return redirect(url_for('get_url_id', id=id), 302)
 
 
 @app.errorhandler(404)
